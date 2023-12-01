@@ -9,6 +9,8 @@ class Day1Part2(BaseClass):
     def find_a_number(self, search_str, nums):
         for i in range(len(search_str)):
             for j, num in enumerate(nums):
+                if search_str[i].isnumeric():
+                    return int(search_str[i])
                 if search_str[i:].startswith(num):
                     return j%10+1
 
@@ -17,11 +19,8 @@ class Day1Part2(BaseClass):
 
         num1, num2 = 0, 0
         
-        nums_fwd = ['one','two','three','four','five','six','seven','eight','nine','!!!!','1','2','3','4','5','6','7','8','9']
+        nums_fwd = ['one','two','three','four','five','six','seven','eight','nine']
         nums_bkd = [n[::-1] for n in nums_fwd]
-
-        trie_fwd = self.create_trie(nums_fwd)
-        trie_bkd = self.create_trie(nums_bkd)
 
         total = 0
 
