@@ -3,8 +3,6 @@ NOTES:
 """
 
 from base_class import BaseClass
-from copy import copy
-import json
 
 class Day1Part2(BaseClass):
 
